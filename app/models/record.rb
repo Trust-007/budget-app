@@ -1,4 +1,8 @@
 class Record < ApplicationRecord
   belongs_to :user
-  has_one :category
+  has_many :category_transactions, dependent: :destroy
+  has_many :categories, through: :category_transactions
+
+  validates :name, presence: true
+  validates :amount, presence: true, numericality: { only_integer: false, greater_than: 0 }
 end
