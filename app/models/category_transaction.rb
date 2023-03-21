@@ -1,4 +1,4 @@
 class CategoryTransaction < ApplicationRecord
-  belongs_to :records
-  belongs_to :categories
+  belongs_to :record
+  belongs_to :category
 end

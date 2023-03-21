@@ -1,0 +1,17 @@
+<div class='categories_container'>
+  <%= link_to 'Add Category', new_category_path, class: 'add_food' %>
+  <% if @user.categories.empty? %>
+    <h2> No Categories for this user.</h2>
+  <% else %>
+      <ul> 
+        <% @user.categories.each do |category| %>
+           <li>
+            <img src='<%= category.icon %>' alt='<%= category.name %>'/>
+            <p><%= category.name %></p>
+           </li>
+        <% end %>
+      </ul>  
+    </table>
+      
+  <% end %>
+</div>

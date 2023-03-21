@@ -1,0 +1,32 @@
+<% if @record.errors.any? %>
+ <div class='errors'>
+    <h2>The following errors must be resolved</h2>
+    <ul>
+    <% @record.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div> 
+<% end %>
+<%= form_with model: @record, url: category_records_path(@category.id), data: { turbo: false }, method: :post do |f| %>
+
+<div class='input_contain'>
+  <div class='input_label'>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div>
+
+  <div class='input_label'>
+    <%= f.label :amount, %> 
+    <%= f.url_field :amount %>
+  </div>
+
+  <div class='input_label'>
+    <%= f.label 'select category' %> 
+    <%= f.select, @categories.map { |category| [category.name, category.id] }, {:multiple => true} %>
+  </div>
+  
+  <%= f.submit( class: "food_add_btn") %> 
+</div>
+
+<% end %>

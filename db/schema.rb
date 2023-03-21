@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_162536) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_001828) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,22 +24,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_162536) do
   end
 
   create_table "category_transactions", force: :cascade do |t|
-    t.bigint "records_id", null: false
-    t.bigint "categories_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_category_transactions_on_categories_id"
-    t.index ["records_id"], name: "index_category_transactions_on_records_id"
+    t.index ["category_id"], name: "index_category_transactions_on_category_id"
+    t.index ["record_id"], name: "index_category_transactions_on_record_id"
   end
 
   create_table "records", force: :cascade do |t|
     t.string "name", null: false
     t.decimal "amount", default: "0.0", null: false
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_records_on_category_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
@@ -62,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_162536) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "category_transactions", "categories", column: "categories_id"
-  add_foreign_key "category_transactions", "records", column: "records_id"
+  add_foreign_key "category_transactions", "categories"
+  add_foreign_key "category_transactions", "records"
   add_foreign_key "records", "users"
 end
