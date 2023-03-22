@@ -37,7 +37,7 @@ RSpec.feature 'Categories#index view', type: :feature do
 
   scenario 'Add category by clicking on add button' do
     visit "#{base_url}/categories"
-    add = page.all('.add_category')
+    add = page.all('.add_category')[0]
     add.click
     expect(page).to have_current_path("#{base_url}/categories/new")
   end
