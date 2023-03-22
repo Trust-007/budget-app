@@ -13,10 +13,93 @@
  *= require_tree .
  *= require_self
  */
-img {
-  width: 200px;
-  height: 200px;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-/* .categories_container img {
-} */
+body {
+  background-color: rgb(231, 229, 229);
+}
+
+.nav_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  padding-left: 25px;
+  background-color: #3778c2;
+}
+
+.nav_bar h2 {
+  font-size: 25px;
+  color: white;
+}
+
+.nav_bar a {
+  text-decoration: none;
+  color: white;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+button:hover {
+  color: #5fb523;
+}
+
+.home_container {
+  margin-top: 120px;
+}
+
+.home_container h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.home_container div {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.sign_up {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #5fb523;
+  color: white;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+.sign_in {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #3778c2;
+  color: white;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+.sign_up:hover {
+  color: #5fb523;
+  background-color: #3778c2;
+  transition: 0.3s;
+}
+
+.sign_in:hover {
+  color: #3778c2;
+  background-color: #5fb523;
+  transition: 0.3s;
+}

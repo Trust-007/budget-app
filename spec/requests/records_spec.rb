@@ -29,7 +29,7 @@ RSpec.describe 'Records', type: :request do
     end
 
     it 'includes placeholder text' do
-      expect(response.body).to include('Add a new transaction')
+      expect(response.body).to include('Add new transaction')
     end
   end
 

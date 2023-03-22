@@ -12,20 +12,18 @@
 
   <div class='input_contain'>
     <div class='input_label'>
-      <%= f.label :name %> 
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: 'Name' %>
     </div>
 
     <div class='input_label'>
-      <%= f.label :amount %> 
-      <%= f.text_field :amount %>
+      <%= f.text_field :amount, placeholder: 'Amount' %>
     </div>
 
-    <div class='input_label'>
+    <div class='select_label'>
       <%= f.label :categories, 'Please select at least one(use `shift` or `ctrl` key for multiple)' %>
       <%= f.collection_select(:category_ids, @categories, :id, :name, {}, :multiple => true, :required => true, size: @categories.length) %>
     </div>
-    <%= f.submit('Save', class: "food_add_btn") %> 
+    <%= f.submit('Save', class: "add_btn") %> 
   </div>
 
 <% end %>

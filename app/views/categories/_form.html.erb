@@ -11,17 +11,15 @@
 <%= form_with model: @category, url: categories_path, data: { turbo: false }, method: :post do |f| %>
 
 <div class='input_contain'>
-  <div class='input_label'>
-    <%= f.label :name %> 
-    <%= f.text_field :name %>
+  <div class='input_label'> 
+    <%= f.text_field :name, placeholder: 'Name' %>
   </div>
 
   <div class='input_label'>
-    <%= f.label :icon, 'Icon link' %> 
-    <%= f.url_field :icon %>
+    <%= f.url_field :icon, placeholder: 'Icon link' %>
   </div>
-  
-  <%= f.submit('Save', class: "food_add_btn") %> 
+    
+  <%= f.submit('Save', class: "add_btn") %> 
 </div>
 
 <% end %>

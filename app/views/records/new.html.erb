@@ -1,6 +1,5 @@
-<div class='add_food_container'>
-    <h1>Add Record</h1>
-    <%= link_to 'back', category_records_path(@category.id) %>
+<div class='add_container'>
+    <%= link_to '< back', category_records_path(@category.id),class: 'back' %>
 
     <%= render 'form' %>
 </div>
