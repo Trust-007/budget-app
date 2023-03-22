@@ -16,7 +16,6 @@ RSpec.describe Category, type: :model do
     expect(subject).to_not be_valid
   end
 
-
   it 'Subject should be valid' do
     expect(subject).to be_valid
   end
