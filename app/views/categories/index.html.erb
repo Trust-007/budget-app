@@ -3,7 +3,7 @@
   <% if @user.categories.empty? %>
     <h2> No Categories for this user.</h2>
   <% else %>
-      <ul> 
+      <ul class='category_list'> 
         <% @user.categories.each do |category| %>
            <li>
             <a href="<%=category_records_path(category.id)%>">
