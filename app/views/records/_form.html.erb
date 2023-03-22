@@ -10,23 +10,22 @@
 <% end %>
 <%= form_with model: @record, url: category_records_path(@category.id), data: { turbo: false }, method: :post do |f| %>
 
-<div class='input_contain'>
-  <div class='input_label'>
-    <%= f.label :name %> 
-    <%= f.text_field :name %>
-  </div>
+  <div class='input_contain'>
+    <div class='input_label'>
+      <%= f.label :name %> 
+      <%= f.text_field :name %>
+    </div>
 
-  <div class='input_label'>
-    <%= f.label :amount, %> 
-    <%= f.url_field :amount %>
-  </div>
+    <div class='input_label'>
+      <%= f.label :amount %> 
+      <%= f.text_field :amount %>
+    </div>
 
-  <div class='input_label'>
-    <%= f.label 'select category' %> 
-    <%= f.select, @categories.map { |category| [category.name, category.id] }, {:multiple => true} %>
+    <div class='input_label'>
+      <%= f.label :categories, 'Please select at least one(use `shift` or `ctrl` key for multiple)' %>
+      <%= f.collection_select(:category_ids, @categories, :id, :name, {}, :multiple => true, :required => true, size: @categories.length) %>
+    </div>
+    <%= f.submit('Save', class: "food_add_btn") %> 
   </div>
-  
-  <%= f.submit( class: "food_add_btn") %> 
-</div>
 
 <% end %>

@@ -1,17 +1,19 @@
 <div class='categories_container'>
-  <%= link_to 'Add Record', new_category_path, class: 'add_food' %>
+  <%= link_to 'back', categories_path %>
   <% if @records.empty? %>
-    <h2> No Categories for this user.</h2>
+    <h2> No records for this category.</h2>
   <% else %>
+      <h3>$<%= @records.inject(0) {|sum,x| sum + x.amount } %></h3>
       <ul> 
         <% @records.each do |record| %>
            <li>
-            <p><%= category.name %></p>
-            <p><%= category.amount %></p>
+            <p><%= record.name %></p>
+            <p>$<%= record.amount %></p>
            </li>
         <% end %>
       </ul>  
     </table>
       
   <% end %>
+  <%= link_to 'Add a new transaction', new_category_record_path, class: 'add_food' %>
 </div>

@@ -1,17 +1,23 @@
 <div class='categories_container'>
-  <%= link_to 'Add Category', new_category_path, class: 'add_food' %>
+   <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
   <% if @user.categories.empty? %>
     <h2> No Categories for this user.</h2>
   <% else %>
       <ul> 
         <% @user.categories.each do |category| %>
            <li>
-            <img src='<%= category.icon %>' alt='<%= category.name %>'/>
-            <p><%= category.name %></p>
+            <a href="<%=category_records_path(category.id)%>">
+              <img src='<%= category.icon %>' alt='<%= category.name %>'/>
+              <p><%= category.name %></p>
+              <% if category.records.empty? %>
+                <p>$0</p>
+              <% else %>
+                <p>$<%= category.records.inject(0) {|sum,x| sum + x.amount } %></p>
+              <% end %>
+            </a>
            </li>
         <% end %>
-      </ul>  
-    </table>
-      
+      </ul> 
   <% end %>
+   <%= link_to 'Add a new category', new_category_path, class: 'add_food' %>
 </div>
