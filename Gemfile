@@ -77,10 +77,10 @@ end
 # rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-#devise
+# devise
 gem 'devise'
 
-#cancancan
+# cancancan
 gem 'cancancan'
 
 gem 'factory_bot_rails'

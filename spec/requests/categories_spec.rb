@@ -36,7 +36,7 @@ RSpec.describe 'Categories', type: :request do
       current_user = User.first
       current_user.confirm if current_user.confirmed_at.nil?
       sign_in current_user
-      get "/categories/new"
+      get '/categories/new'
     end
 
     it 'is a success' do
@@ -53,7 +53,7 @@ RSpec.describe 'Categories', type: :request do
       current_user = User.first
       current_user.confirm if current_user.confirmed_at.nil?
       sign_in current_user
-      get "/categories/new"
+      get '/categories/new'
     end
 
     it 'includes button text' do
@@ -63,5 +63,5 @@ RSpec.describe 'Categories', type: :request do
     it 'includes label text' do
       expect(response.body).to include('Name')
     end
-   end 
+  end
 end

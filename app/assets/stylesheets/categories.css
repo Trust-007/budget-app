@@ -47,13 +47,13 @@
   justify-content: space-between;
 }
 
-.info div p {
-  font-size: 25px;
-}
-
 .category_name,
 .info p {
   color: #434b54;
+}
+
+.info div p {
+  font-size: 25px;
 }
 
 .total_amounts {

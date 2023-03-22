@@ -20,7 +20,7 @@ RSpec.describe 'Records', type: :request do
   end
 
   describe 'Check content of index page' do
-     before do
+    before do
       current_user = User.first
       current_user.confirm if current_user.confirmed_at.nil?
       sign_in current_user
@@ -67,5 +67,5 @@ RSpec.describe 'Records', type: :request do
     it 'includes label text' do
       expect(response.body).to include('Name')
     end
-   end 
+  end
 end

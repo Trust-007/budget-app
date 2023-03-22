@@ -8,7 +8,6 @@ RSpec.feature 'Categories#index view', type: :feature do
     @current_user = User.first
     @current_user.confirm if @current_user.confirmed_at.nil?
     @category = Category.find_by(user_id: @current_user.id)
-
     visit "#{base_url}/categories"
     fill_in 'Email', with: @current_user.email
     fill_in 'Password', with: '123456'
@@ -33,6 +32,18 @@ RSpec.feature 'Categories#index view', type: :feature do
     visit "#{base_url}/categories"
     expect(page).to have_css('.add_category', wait: 5)
     expect(page).to have_css('.add_category')
+  end
+end
+
+RSpec.feature 'Categories#index handle click events', type: :feature do
+  before(:each) do
+    @current_user = User.first
+    @current_user.confirm if @current_user.confirmed_at.nil?
+    @category = Category.find_by(user_id: @current_user.id)
+    visit "#{base_url}/categories"
+    fill_in 'Email', with: @current_user.email
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
   end
 
   scenario 'Add category by clicking on add button' do
