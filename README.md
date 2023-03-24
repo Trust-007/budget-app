@@ -42,11 +42,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
+## 🚀 Live Demo <a name="live-demo"></a> -->
 
-<!-- > Add a link to your deployed project. -->
+[Live Demo](https://budgetty.onrender.com/)
 
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -163,10 +163,12 @@ If you like this project, Please give it a ⭐️
 
 Thanks [@microverse](https://www.microverse.org/)
 
+Original design by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/Trust-007/budget-app/blob/app/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

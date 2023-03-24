@@ -74,3 +74,32 @@
   padding: 20px;
   border-radius: 2px;
 }
+
+@media (max-width: 600px) {
+  .category_list {
+    width: 97%;
+  }
+
+  .category_list li a {
+    padding-inline: 10px;
+  }
+
+  .category_list li a .image {
+    width: 50%;
+  }
+
+  .add_category_cover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5fb523;
+    padding-block: 20px;
+  }
+
+  .add_category {
+    border: 2px solid white;
+  }
+}
