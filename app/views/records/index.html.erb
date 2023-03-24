@@ -1,0 +1,23 @@
+<div class='categories_container'>
+  <div class='back_total'>
+    <%= link_to '< back', categories_path, class: 'back2' %>
+    <h3>$<%= @records.inject(0) {|sum,x| sum + x.amount } || 0 %></h3>
+  </div>
+  <% if @records.empty? %>
+    <h2 class='empty'> No transactions for this category.</h2>
+  <% else %>
+      <ul class='record_list'> 
+        <% @records.each do |record| %>
+           <li>
+            <p class='category_name'><%= record.name %></p>
+            <p>$<%= record.amount %></p>
+           </li>
+        <% end %>
+      </ul>  
+    </table>
+      
+  <% end %>
+  <div class='add_category_cover'>
+    <%= link_to 'Add new transaction', new_category_record_path, class: 'add_category' %>
+  </div>
+</div>

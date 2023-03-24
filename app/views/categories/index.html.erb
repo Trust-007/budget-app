@@ -1,0 +1,31 @@
+<div class='categories_container'>
+  <% if @user.categories.empty? %>
+    <h2 class='empty'> No Categories for this user.</h2>
+  <% else %>
+      <ul class='category_list'> 
+        <% @user.categories.each do |category| %>
+           <li>
+            <a href="<%=category_records_path(category.id)%>">
+              <div class='image'>
+                <img src='<%= category.icon %>' alt='<%= category.name %>'/>
+              </div>  
+              <div class='info'>
+               <div>
+                <p class='category_name'><%= category.name %></p>
+                <% if category.records.empty? %>
+                <p class='total_amounts'>$0</p>
+                <% else %>
+                <p class='total_amounts'>$<%= category.records.inject(0) {|sum,x| sum + x.amount } %></p>
+                <% end %>
+               </div> 
+               <p><%= category.created_at.strftime("%d %b %Y") %></p>
+              </div>
+            </a>
+           </li>
+        <% end %>
+      </ul> 
+  <% end %>
+  <div class='add_category_cover'>
+   <%= link_to 'Add a new category', new_category_path, class: 'add_category' %>
+  </div>
+</div>
